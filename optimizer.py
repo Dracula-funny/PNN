@@ -32,8 +32,7 @@ def build_optimizer2(config, model):
     opt_lower = config.TRAIN.OPTIMIZER.NAME.lower()
     optimizer = None
     l = 0.0001
-    # 2000  0.001(33)   0.0001(66.23)   (0.0005)60.72   (0.00005)65.61%   (0.00008)66.31
-    # 10000 (0.00008)68.28    0.0001 67.49   0.00005 68.61
+   
     if opt_lower == 'sgd':
         optimizer = optim.SGD(parameters, momentum=config.TRAIN.OPTIMIZER.MOMENTUM, nesterov=True,
                               lr=l, weight_decay=config.TRAIN.WEIGHT_DECAY)
