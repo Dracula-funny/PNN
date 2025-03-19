@@ -1,0 +1,41 @@
+DATA:
+  IMG_SIZE: 84
+  NUM_WORKERS: 8
+  TRAIN:
+    BATCH_SIZE: 2
+    DATASET_NAMES:
+    - Birds
+    DATASET_ROOTS:
+    -
+    EPISODE_DESCR_CONFIG:
+      MIN_EXAMPLES_IN_CLASS: 20
+      NUM_QUERY: 15
+      NUM_SUPPORT: 1
+      NUM_TASKS_PER_EPOCH: 1000
+      NUM_WAYS: 5
+      USE_DAG_HIERARCHY: false
+    IS_EPISODIC: true
+  VALID:
+    BATCH_SIZE: 8
+    DATASET_NAMES:
+    - Birds
+    DATASET_ROOTS:
+    -
+    EPISODE_DESCR_CONFIG:
+      MAX_NUM_QUERY: 15
+      MIN_EXAMPLES_IN_CLASS: 20
+      NUM_QUERY: 15
+      NUM_SUPPORT: 1
+      NUM_TASKS_PER_EPOCH: 600
+      NUM_WAYS: 5
+      USE_DAG_HIERARCHY: false
+GPU_ID:
+MODEL:
+  BACKBONE: resnet12
+  CLASSIFIER: proto_knn_head
+  NAME:
+  TYPE: Episodic_Model_knn
+OUTPUT:
+TRAIN:
+  BASE_LR: 0.01
+  EPOCHS: 80
